@@ -11,4 +11,7 @@ qt6_add_qml_module(content
         Screen01.ui.qml
     RESOURCES
         fonts/fonts.txt
+        QML_FILES
+        QML_FILES Header.qml
+        QML_FILES Sidebar.qml
 )
