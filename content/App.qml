@@ -12,7 +12,7 @@ Window {
     visible: true
     title: "IMRF"
 
-    Screen01 {
+    MainContent {
         id: mainScreen
     }
 

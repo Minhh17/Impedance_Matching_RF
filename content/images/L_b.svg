@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<svg width="500" height="260" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" version="1.1">
+ <g class="layer">
+  <title>Layer 1</title>
+  <line id="svg_1" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-width="2" x1="230" x2="310" y1="60" y2="60"/>
+  <line id="svg_2" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-width="2" x1="230" x2="230" y1="60" y2="100"/>
+  <line id="svg_3" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-width="2" x1="200" x2="230" y1="60" y2="60"/>
+  <line id="svg_4" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-width="2" x1="230" x2="230" y1="150" y2="200"/>
+  <line id="svg_5" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-width="2" x1="50" x2="50" y1="160" y2="210"/>
+  <line id="svg_6" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-width="2" x1="50" x2="50" y1="60" y2="120"/>
+  <line id="svg_8" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-width="2" x1="470" x2="470" y1="160" y2="200"/>
+  <line id="svg_9" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-width="2" x1="470" x2="470" y1="60" y2="110"/>
+  <line id="svg_10" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-width="2" x1="360" x2="470" y1="60" y2="60"/>
+  <line id="svg_11" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-width="2" x1="170" x2="200" y1="60" y2="60"/>
+  <line id="svg_12" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-width="2" x1="50" x2="120" y1="60" y2="60"/>
+  <line id="svg_13" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-width="2" x1="470" x2="470" y1="200" y2="200"/>
+  <line id="svg_14" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-width="2" x1="470" x2="470" y1="200" y2="208"/>
+  <path d="m462,208l16,0l-8,8l-8,-8z" fill="rgb(0, 0, 0)" fill-opacity="0" id="svg_15" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-width="2"/>
+  <line id="svg_16" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-width="2" x1="230" x2="230" y1="200" y2="212"/>
+  <path d="m222,212l16,0l-8,8l-8,-8z" fill="rgb(0, 0, 0)" fill-opacity="0" id="svg_17" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-width="2"/>
+  <line id="svg_18" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-width="2" x1="50" x2="50" y1="210" y2="212"/>
+  <path d="m42,212l16,0l-8,8l-8,-8z" fill="rgb(0, 0, 0)" fill-opacity="0" id="svg_19" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-width="2"/>
+  <line id="svg_20" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-width="2" x1="310" x2="311" y1="60" y2="60"/>
+  <line id="svg_21" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-width="2" x1="359" x2="360" y1="60" y2="60"/>
+  <path d="m311,60a2,1.5 90 1 1 12,0m0,0a2,1.5 90 1 1 12,0m0,0a2,1.5 90 1 1 12,0m0,0a2,1.5 90 1 1 12,0" fill="rgb(0, 0, 0)" fill-opacity="0" id="svg_22" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-width="2"/>
+  <line id="svg_25" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-width="2" x1="230" x2="230" y1="100" y2="121"/>
+  <line id="svg_26" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-width="2" x1="230" x2="230" y1="129" y2="150"/>
+  <line id="svg_27" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-width="2" x1="216" x2="244" y1="121" y2="121"/>
+  <line id="svg_28" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-width="2" x1="216" x2="244" y1="129" y2="129"/>
+  <line id="svg_31" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-width="2" x1="120" x2="125" y1="60" y2="60"/>
+  <line id="svg_32" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-width="2" x1="165" x2="170" y1="60" y2="60"/>
+  <path d="m125,60l2,0l3,-7l6,14l6,-14l6,14l6,-14l6,14l3,-7l2,0" fill="rgb(0, 0, 0)" fill-opacity="0" id="svg_33" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-width="2"/>
+  <line id="svg_36" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-width="2" x1="470" x2="470" y1="110" y2="115"/>
+  <line id="svg_37" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-width="2" x1="470" x2="470" y1="155" y2="160"/>
+  <path d="m470,115l0,2l-7,3l14,6l-14,6l14,6l-14,6l14,6l-7,3l0,2" fill="rgb(0, 0, 0)" fill-opacity="0" id="svg_38" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-width="2"/>
+  <line id="svg_41" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-width="2" x1="50" x2="50" y1="120" y2="128"/>
+  <ellipse cx="50" cy="140" fill="rgb(0, 0, 0)" fill-opacity="0" id="svg_42" rx="12" ry="12" stroke="rgb(0, 0, 0)" stroke-width="2"/>
+  <line id="svg_43" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-width="2" x1="50" x2="50" y1="152" y2="160"/>
+  <path d="m50,140m-8,0a4,4 180 1 1 8,0a4,4 180 1 0 8,0" fill="rgb(0, 0, 0)" fill-opacity="0" id="svg_44" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-width="2"/>
+  <ellipse cx="230" cy="60" fill="rgb(0, 0, 0)" id="svg_45" rx="2" ry="2" stroke="rgb(0, 0, 0)" stroke-width="2"/>
+ </g>
+</svg>

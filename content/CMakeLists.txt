@@ -14,4 +14,8 @@ qt6_add_qml_module(content
         QML_FILES
         QML_FILES Header.qml
         QML_FILES Sidebar.qml
+        RESOURCES images/t_feed.svg images/t_block.svg images/pi_feed.svg images/pi_block.svg images/L_d.svg images/L_c.svg images/L_b.svg images/L_a.svg
+        QML_FILES
+        QML_FILES MainContent.qml
+
 )
