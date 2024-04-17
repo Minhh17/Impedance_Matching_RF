@@ -8,6 +8,8 @@
 #include "import_qml_components_plugins.h"
 #include "import_qml_plugins.h"
 
+#include "settinghandle.h"
+
 int main(int argc, char *argv[])
 {
     set_qt_environment();
@@ -28,6 +30,9 @@ int main(int argc, char *argv[])
 
     engine.addImportPath(QCoreApplication::applicationDirPath() + "/qml");
     engine.addImportPath(":/");
+
+    qmlRegisterType<SettingHandle>("CustomTypes", 1, 0, "SettingHandle");
+
 
     engine.load(url);
 

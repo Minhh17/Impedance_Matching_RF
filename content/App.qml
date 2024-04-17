@@ -32,7 +32,7 @@ Window {
         anchors.top: parent.top
         anchors.leftMargin: 17
         anchors.topMargin: 14
-        z: 2
+        z: 10
         anchors.left: parent.left
     }
 

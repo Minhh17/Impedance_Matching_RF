@@ -8,6 +8,7 @@ Check out https://doc.qt.io/qtcreator/creator-quick-ui-forms.html for details on
 import QtQuick 6.2
 import QtQuick.Controls 6.2
 import QtQuick.Layouts 6.2
+import CustomTypes 1.0
 import IMRF
 
 Rectangle {
@@ -27,8 +28,10 @@ Rectangle {
 
         Image {
             id: l_a
-            x: 249
-            y: 220
+            x: 236
+            y: 200
+            width: 602
+            height: 358
             source: "images/L_a.svg"
             fillMode: Image.PreserveAspectFit
         }
@@ -76,7 +79,7 @@ Rectangle {
 
                     // Selected RF type
                     onCurrentTextChanged: {
-                        console.log("Selected Circuit type:", currentText)
+                        // console.log("Selected Circuit type:", currentText)
                     }
                 }
             }
@@ -96,7 +99,7 @@ Rectangle {
 
                     // Selected RF type
                     onCurrentTextChanged: {
-                        console.log("Selected DC type:", currentText)
+                        // console.log("Selected DC type:", currentText)
                     }
                 }
             }
@@ -116,7 +119,7 @@ Rectangle {
                     Layout.preferredWidth: parent.width * 0.8
 
                     onTextChanged: {
-                        console.log("Entered Freq:", text)
+                        // console.log("Entered Freq:", text)
                     }
                 }
 
@@ -132,7 +135,7 @@ Rectangle {
                     model: ["MHz", "GHz"]
 
                     onCurrentTextChanged: {
-                        console.log("Selected Freq Unit:", currentText)
+                        // console.log("Selected Freq Unit:", currentText)
                     }
                 }
             }
@@ -152,7 +155,7 @@ Rectangle {
                     Layout.preferredWidth: parent.width * 0.8
 
                     onTextChanged: {
-                        console.log("Entered Source Resistance:", text)
+                        // console.log("Entered Source Resistance:", text)
                     }
                 }
                 // Selecting Source Resistance unit
@@ -167,7 +170,7 @@ Rectangle {
                     model: ["M Ohm", "G Ohm"]
 
                     onCurrentTextChanged: {
-                        console.log("Selected Source Resistance Unit:", currentText)
+                        // console.log("Selected Source Resistance Unit:", currentText)
                     }
                 }
             }
@@ -187,7 +190,7 @@ Rectangle {
                     Layout.preferredWidth: parent.width * 0.8
 
                     onTextChanged: {
-                        console.log("Entered Source Reactance:", text)
+                        // console.log("Entered Source Reactance:", text)
                     }
                 }
                 // Selecting Source Reactance unit
@@ -202,7 +205,7 @@ Rectangle {
                     model: ["M Ohm", "G Ohm"]
 
                     onCurrentTextChanged: {
-                        console.log("Selected Source Reactance Unit:", currentText)
+                        // console.log("Selected Source Reactance Unit:", currentText)
                     }
                 }
             }
@@ -222,7 +225,7 @@ Rectangle {
                     Layout.preferredWidth: parent.width * 0.8
 
                     onTextChanged: {
-                        console.log("Entered Load Resistance:", text)
+                        // console.log("Entered Load Resistance:", text)
                     }
                 }
                 // Selecting Load Resistance unit
@@ -237,7 +240,7 @@ Rectangle {
                     model: ["M Ohm", "G Ohm"]
 
                     onCurrentTextChanged: {
-                        console.log("Selected Load Resistance Unit:", currentText)
+                        // console.log("Selected Load Resistance Unit:", currentText)
                     }
                 }
             }
@@ -257,7 +260,7 @@ Rectangle {
                     Layout.preferredWidth: parent.width * 0.8
 
                     onTextChanged: {
-                        console.log("Entered Load Reactance:", text)
+                        // console.log("Entered Load Reactance:", text) minhminh
                     }
                 }
                 // Selecting Load Reactance unit
@@ -272,7 +275,7 @@ Rectangle {
                     model: ["M Ohm", "G Ohm"]
 
                     onCurrentTextChanged: {
-                        console.log("Selected Load Reactance Unit:", currentText)
+                        // console.log("Selected Load Reactance Unit:", currentText)
                     }
                 }
             }
@@ -292,7 +295,7 @@ Rectangle {
                     Layout.preferredWidth: parent.width * 0.8
 
                     onTextChanged: {
-                        console.log("Entered Q Factor:", text)
+                        // console.log("Entered Q Factor:", text)
                     }
                 }
             }
@@ -314,21 +317,65 @@ Rectangle {
         }
     }
 
+
+    // Confirmation dialog
+    Dialog {
+        id: confirmationDialog
+        modal: true
+        standardButtons: Dialog.Ok | Dialog.Cancel
+        title: "Confirmation"
+        anchors.centerIn: parent
+        Text {
+            id: confirmText
+            text: qsTr("Are you sure you want to apply the settings?")
+        }
+
+        onAccepted: {
+            console.log("Settings applied!")
+        }
+    }
+
     function applySettings() {
-        var rfType = rfTypeDropdown.currentText
-        var frequency = frequencyInput.text
-        var frequencyUnit = frequencyUnitDropdown.currentText
-        var impedance = impedanceInput.text
-        var impedanceUnit = impedanceUnitDropdown.currentText
-        var impedanceLoad = impedanceLoadInput.text
-        var impedanceLoadUnit = impedanceLoadUnitDropdown.currentText
+        // confirmationDialog.open()
+
+        var circuitTypeVar = circuitType.currentText
+        var dcType = dcCurrent.currentText
+        var freqVar = frequencyTxF.text
+        var freqUnitVar = freqUnit.currentText
+        var rsVar = rs.text
+        var rsUnitVar = rsUnit.currentText
+        var xsVar = xs.text
+        var xsUnitVar = xsUnit.currentText
+        var rlVar = rl.text
+        var rlUnitVar = rlUnit.currentText
+        var xlVar = xl.text
+        var xlUnitVar = xlUnit.currentText
+        var qVar = qFactor.text
+
+        settingsHandler.applySettings(circuitTypeVar, dcType, freqVar, freqUnitVar,
+                                                  rsVar, rsUnitVar, xsVar, xsUnitVar,
+                                                  rlVar, rlUnitVar, xlVar, xlUnitVar,
+                                                  qVar)
 
         console.log("Applying RF Settings:")
-        console.log("RF Type:", rfType)
-        console.log("Frequency:", frequency, frequencyUnit)
-        console.log("Impedance Input:", impedance, impedanceUnit)
-        console.log("Impedance Load:", impedanceLoad, impedanceLoadUnit)
+        console.log("Circuit Type:", circuitTypeVar)
+        console.log("DC Current Type: ", dcType)
+        console.log("Frequency:", freqVar, freqUnitVar)
+        console.log("Impedance Input:", rsVar, rsUnitVar, xsVar, xsUnitVar)
+        console.log("Impedance Load:", rlVar, rlUnitVar, xlVar, xlUnitVar)
+
     }
+
+    SettingHandle {
+            id: settingsHandler
+
+            // Connect signal to process settings
+            onSettingsApplied: {
+                // Handle settings data
+                console.log("Minh reiceiver")
+                console.log(frequencyTxF.text)
+            }
+        }
 
 
     states: [
@@ -348,8 +395,8 @@ Rectangle {
         height: 82
         text: qsTr("Press me")
         anchors.verticalCenter: parent.verticalCenter
-        anchors.verticalCenterOffset: 341
-        anchors.horizontalCenterOffset: -48
+        anchors.verticalCenterOffset: 369
+        anchors.horizontalCenterOffset: -86
         checkable: true
         anchors.horizontalCenter: parent.horizontalCenter
 
@@ -387,5 +434,29 @@ Rectangle {
                 from: "#2294c6"
             }
         }
+    }
+
+    Button {
+        id: visua
+        width: 234
+        height: 82
+        text: qsTr("Visualization")
+        anchors.verticalCenter: parent.verticalCenter
+        checkable: true
+        anchors.verticalCenterOffset: 369
+        anchors.horizontalCenterOffset: -426
+        anchors.horizontalCenter: parent.horizontalCenter
+    }
+
+    Button {
+        id: exportBtn
+        width: 234
+        height: 82
+        text: qsTr("Export")
+        anchors.verticalCenter: parent.verticalCenter
+        checkable: true
+        anchors.verticalCenterOffset: 369
+        anchors.horizontalCenterOffset: -745
+        anchors.horizontalCenter: parent.horizontalCenter
     }
 }
