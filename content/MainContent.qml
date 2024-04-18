@@ -1,4 +1,3 @@
-
 /*
 This is a UI file (.ui.qml) that is intended to be edited in Qt Design Studio only.
 It is supposed to be strictly declarative and only uses a subset of QML. If you edit
@@ -27,13 +26,41 @@ Rectangle {
         color: "#f0f0f0"
 
         Image {
-            id: l_a
-            x: 236
-            y: 200
-            width: 602
-            height: 358
+            id: circuitImage
+            x: 287
+            y: 306
             source: "images/L_a.svg"
             fillMode: Image.PreserveAspectFit
+        }
+
+        Text {
+            id: cValueText
+            x: 51
+            y: 54
+            width: 250
+            height: 74
+            text: qsTr("C = ")
+            font.pixelSize: 24
+        }
+
+        Text {
+            id: lValueText
+            x: 51
+            y: 120
+            width: 250
+            height: 74
+            text: qsTr("L =")
+            font.pixelSize: 24
+        }
+
+        Text {
+            id: qValueText
+            x: 475
+            y: 54
+            width: 250
+            height: 74
+            text: qsTr("Q = ")
+            font.pixelSize: 24
         }
     }
 
@@ -79,7 +106,15 @@ Rectangle {
 
                     // Selected RF type
                     onCurrentTextChanged: {
-                        // console.log("Selected Circuit type:", currentText)
+                        if (currentIndex == 0) {
+                            circuitImage.source = "images/L_a.svg"
+                        }
+                        else if (currentIndex == 1) {
+                            circuitImage.source = "images/pi_feed.svg"
+                        }
+                        else if (currentIndex == 2) {
+                            circuitImage.source = "images/t_feed.svg"
+                        }
                     }
                 }
             }
@@ -352,41 +387,41 @@ Rectangle {
         var xlUnitVar = xlUnit.currentText
         var qVar = qFactor.text
 
-        settingsHandler.applySettings(circuitTypeVar, dcType, freqVar, freqUnitVar,
-                                                  rsVar, rsUnitVar, xsVar, xsUnitVar,
-                                                  rlVar, rlUnitVar, xlVar, xlUnitVar,
-                                                  qVar)
+        var result = settingHandle.applySettings(circuitTypeVar, dcType, freqVar, freqUnitVar,
+                                                 rsVar, rsUnitVar, xsVar, xsUnitVar,
+                                                 rlVar, rlUnitVar, xlVar, xlUnitVar,
+                                                 qVar)
 
-        console.log("Applying RF Settings:")
-        console.log("Circuit Type:", circuitTypeVar)
-        console.log("DC Current Type: ", dcType)
-        console.log("Frequency:", freqVar, freqUnitVar)
-        console.log("Impedance Input:", rsVar, rsUnitVar, xsVar, xsUnitVar)
-        console.log("Impedance Load:", rlVar, rlUnitVar, xlVar, xlUnitVar)
+        console.log(result);
+
+        cValueText.text = "C= " + result[0];
+        lValueText.text = "L= " + result[1];
+        qValueText.text = "Q= " + result[2];
+
+        // console.log("Applying RF Settings:")
+        // console.log("Circuit Type:", circuitTypeVar)
+        // console.log("DC Current Type: ", dcType)
+        // console.log("Frequency:", freqVar, freqUnitVar)
+        // console.log("Impedance Input:", rsVar, rsUnitVar, xsVar, xsUnitVar)
+        // console.log("Impedance Load:", rlVar, rlUnitVar, xlVar, xlUnitVar)
 
     }
 
     SettingHandle {
-            id: settingsHandler
+        id: settingHandle
 
-            // Connect signal to process settings
-            onSettingsApplied: {
-                // Handle settings data
-                console.log("Minh reiceiver")
-                console.log(frequencyTxF.text)
-            }
+        // Connect signal to process settings
+        onSettingsApplied: {
+            // Handle settings data
+            console.log("Minh reiceiver")
         }
+    }
 
 
     states: [
         State {
             name: "clicked"
             when: button.checked
-
-            PropertyChanges {
-                target: label
-                text: qsTr("Button Checked")
-            }
         }
     ]
     Button {
@@ -405,48 +440,7 @@ Rectangle {
             onClicked: animation.start()
         }
     }
-    Text {
-        id: label
-        x: 98
-        y: 156
-        width: 162
-        height: 50
-        text: qsTr("Hello IMRF")
-        font.pointSize: 20
-        font.family: Constants.font.family
 
-        SequentialAnimation {
-            id: animation
-
-            ColorAnimation {
-                id: colorAnimation1
-                target: rectangle
-                property: "color"
-                to: "#2294c6"
-                from: Constants.backgroundColor
-            }
-
-            ColorAnimation {
-                id: colorAnimation2
-                target: rectangle
-                property: "color"
-                to: Constants.backgroundColor
-                from: "#2294c6"
-            }
-        }
-    }
-
-    Button {
-        id: visua
-        width: 234
-        height: 82
-        text: qsTr("Visualization")
-        anchors.verticalCenter: parent.verticalCenter
-        checkable: true
-        anchors.verticalCenterOffset: 369
-        anchors.horizontalCenterOffset: -426
-        anchors.horizontalCenter: parent.horizontalCenter
-    }
 
     Button {
         id: exportBtn
@@ -457,6 +451,17 @@ Rectangle {
         checkable: true
         anchors.verticalCenterOffset: 369
         anchors.horizontalCenterOffset: -745
+        anchors.horizontalCenter: parent.horizontalCenter
+    }
+    Button {
+        id: visua
+        width: 234
+        height: 82
+        text: qsTr("Visualization")
+        anchors.verticalCenter: parent.verticalCenter
+        checkable: true
+        anchors.verticalCenterOffset: 369
+        anchors.horizontalCenterOffset: -426
         anchors.horizontalCenter: parent.horizontalCenter
     }
 }

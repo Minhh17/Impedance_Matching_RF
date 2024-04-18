@@ -14,7 +14,8 @@ if (Qt6_VERSION VERSION_GREATER_EQUAL 6.3)
 endif()
 
 qt_add_executable(IMRFApp src/main.cpp
-    src/settinghandle.h src/settinghandle.cpp)
+    src/settinghandle.h src/settinghandle.cpp
+    src/l_type.h src/l_type.cpp)
 
 qt_add_resources(IMRFApp "configuration"
     PREFIX "/"
