@@ -3,6 +3,8 @@
 
 #include <QObject>
 #include "l_type.h"
+#include "pi_type.h"
+#include "t_type.h"
 
 class SettingHandle : public QObject
 {
@@ -12,6 +14,8 @@ public:
 
 private:
     l_type LType;
+    pi_type PiType;
+    t_type TType;
 
 signals:
     void settingsApplied(QString circuitType, QString dcType, double frequency, QString freqUnit,

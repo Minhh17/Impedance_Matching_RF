@@ -15,7 +15,9 @@ endif()
 
 qt_add_executable(IMRFApp src/main.cpp
     src/settinghandle.h src/settinghandle.cpp
-    src/l_type.h src/l_type.cpp)
+    src/l_type.h src/l_type.cpp
+    src/pi_type.h src/pi_type.cpp
+    src/t_type.h src/t_type.cpp)
 
 qt_add_resources(IMRFApp "configuration"
     PREFIX "/"

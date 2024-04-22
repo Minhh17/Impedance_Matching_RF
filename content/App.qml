@@ -27,11 +27,15 @@ Window {
     }
 
     Button {
-        text: sidebar.sidebarVisible ? "Hide Sidebar" : "Show Sidebar"
+        width: 65
+        height: 65
         onClicked: sidebar.sidebarVisible = !sidebar.sidebarVisible // Toggle sidebar visibility
         anchors.top: parent.top
-        anchors.leftMargin: 17
-        anchors.topMargin: 14
+        anchors.leftMargin: 6
+        anchors.topMargin: 0
+        icon.source: "images/bars-solid.svg"
+        highlighted: false
+        flat: true
         z: 10
         anchors.left: parent.left
     }

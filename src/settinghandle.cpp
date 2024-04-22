@@ -11,23 +11,30 @@ QVector<double> SettingHandle::applySettings(QString circuitTypeVar, QString dcT
                                   double rlVar, QString rlUnitVar, double xlVar, QString xlUnitVar,
                                   double qVar)
 {
+    //"GHz", "MHz", "Hz"
+    if (freqUnitVar == "GHz"){
+        freqVar = freqVar *1000000000;
+    }
+    else if (freqUnitVar == "MHz"){
+        freqVar = freqVar *1000000;
+    }
 
     // L Shape Matching
-    if(circuitTypeVar == "L Shaped Matching") {
-        qDebug() << "Da nhan data 1 & Thuc thi 1";
+    if(circuitTypeVar == "L Shaped Matching") {        
         return LType.lCalc(dcType, freqVar, rsVar, xsVar, rlVar, xlVar, qVar);
     }
 
     // Pi shape Matching
     else if(circuitTypeVar == "Pi Shaped Matching") {
-        qDebug() << "Da nhan data 2 & Thuc thi 2" ;
+        qDebug() << "Da nhan data pi & Thuc thi pi" ;
+        return PiType.piCalc(dcType, freqVar, rsVar, xsVar, rlVar, xlVar, qVar);
     }
 
     // T Shape Matching
     else if(circuitTypeVar == "T Shaped Matching") {
-        qDebug() << "Da nhan data 3 & Thuc thi 3" ;
+        qDebug() << "Da nhan data t & Thuc thi t" ;
+        return TType.tCalc(dcType, freqVar, rsVar, xsVar, rlVar, xlVar, qVar);
     }
-
 
     // Emit signal with settings data
     emit settingsApplied(circuitTypeVar, dcType, freqVar, freqUnitVar,
